@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d4f1e95bbf1a9c44d9443557c73eb282
+guid: 9fdab23d5939aec40828b629227fc5fb
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Comfortaa
+  - Fredoka One
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
