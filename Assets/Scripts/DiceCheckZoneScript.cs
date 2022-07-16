@@ -15,11 +15,14 @@ public class DiceCheckZoneScript : MonoBehaviour {
     [SerializeField] private GameObject secondPanel;
     [SerializeField] private GameObject havetoCompletePanel;
     [SerializeField] private TMP_Text havetoCompleteScore;
+    [SerializeField] private TMP_Text firstDice;
+    [SerializeField] private TMP_Text secondDice;
+
 
     // Update is called once per frame
     void FixedUpdate () {
 		diceVelocity = DiceScript.diceVelocity;
-	}
+    }
 
 	void OnTriggerStay(Collider col)
 	{
@@ -77,7 +80,7 @@ public class DiceCheckZoneScript : MonoBehaviour {
                     StartCoroutine(secondmode());
                     break;
 			}
-            
+            firstDice.text = firstNumber.ToString();
         }
 
         if (diceVelocity.x == 0f && diceVelocity.y == 0f && diceVelocity.z == 0f && keyPressed == 1 && secondtime == true)
@@ -122,6 +125,7 @@ public class DiceCheckZoneScript : MonoBehaviour {
                     StartCoroutine(scorPanele());
                     break;
             }
+            secondDice.text = secondNumber.ToString();
         }
     }
     IEnumerator secondmode()
