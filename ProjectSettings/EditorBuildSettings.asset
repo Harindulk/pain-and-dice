@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ColorSwitch_easy.unity
     guid: a49db7f0c205bc74384591bf6768a6ec
   - enabled: 1
-    path: Assets/Scenes/Game over.unity
+    path: Assets/Scenes/gameover.unity
     guid: e709435000e9a614b950241670a801c1
   m_configObjects: {}
