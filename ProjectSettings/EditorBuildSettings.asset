@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/1.unity
+    path: Assets/Scenes/Roll the Dice.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/aa_easy.unity
+    guid: ff310ab3e12aa474cbd5636670007ad5
+  - enabled: 1
+    path: Assets/Scenes/ColorSwitch_easy.unity
+    guid: a49db7f0c205bc74384591bf6768a6ec
+  - enabled: 1
+    path: Assets/Scenes/Game over.unity
+    guid: e709435000e9a614b950241670a801c1
   m_configObjects: {}
