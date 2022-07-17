@@ -6,14 +6,35 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 1fdd486d5d264534d9d461a8dd49aa14
+  - enabled: 1
     path: Assets/Scenes/Roll the Dice.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/aa_easy.unity
-    guid: ff310ab3e12aa474cbd5636670007ad5
+    path: Assets/Scenes/aa_1.unity
+    guid: 9b652ee5c81dbc44c84ffc9266f4cae3
   - enabled: 1
-    path: Assets/Scenes/ColorSwitch_easy.unity
+    path: Assets/Scenes/ColorSwitch_1.unity
     guid: a49db7f0c205bc74384591bf6768a6ec
+  - enabled: 1
+    path: Assets/Scenes/aa_2.unity
+    guid: 91f285b84ec8da54c997806bd1f4fae1
+  - enabled: 1
+    path: Assets/Scenes/ColorSwitch_2.unity
+    guid: 336714f86fd2c2c469981f5984b5a654
+  - enabled: 1
+    path: Assets/Scenes/aa_3.unity
+    guid: b0b8a6512d0227648a4b5fe262e215db
+  - enabled: 1
+    path: Assets/Scenes/ColorSwitch_3.unity
+    guid: ede151e2213713348a0b1675bd74638c
+  - enabled: 1
+    path: Assets/Scenes/aa_4.unity
+    guid: de79a70478126df4e8cc74399635163d
+  - enabled: 1
+    path: Assets/Scenes/aa_5.unity
+    guid: 9e7900c0bb4a84b4186584969d6b5886
   - enabled: 1
     path: Assets/Scenes/gameover.unity
     guid: e709435000e9a614b950241670a801c1

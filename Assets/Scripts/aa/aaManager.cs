@@ -6,22 +6,26 @@ using TMPro;
 
 public class aaManager : MonoBehaviour {
 
-	int result = DiceCheckZoneScript.result;
-	int low = 1;
-	static int levelstoComplete;
+	int timeTOPlay = DiceCheckZoneScript.result -1;
+
 	private bool gameHasEnded = false;
 	public aaRotator rotator;
 	public Spawner spawner;
 	public Animator animator;
-	public int winAmount;
 
-	[SerializeField] private TMP_Text needToWin;
+	public int winAmount;
+    public int range1, range2;
+
+    [SerializeField] private TMP_Text needToWin;
     [SerializeField] private TMP_Text levelstoCompleteText;
 	[SerializeField] private GameObject winPanel;
 
     private void Start()
     {
+		winAmount = Random.Range(range1, range2);
+
 		needToWin.text = winAmount.ToString();
+		Debug.Log(timeTOPlay);
     }
 
     public void EndGame ()
@@ -36,38 +40,39 @@ public class aaManager : MonoBehaviour {
 
 		gameHasEnded = true;
 	}
-
-	public void RestartLevel ()
-	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
-	}
-
-	public void Update()
-	{
+    
+    public void Update()
+    {
 		if (Score.PinCount == winAmount)
-        {
-			result = result - 1;
-			checkIsWon();
-			winPanel.SetActive(true);
-			rotator.enabled = false;
-			spawner.enabled = false;
+		{
 			animator.SetTrigger("gameWon");
-			levelstoCompleteText.text = result.ToString();
+			Debug.Log(timeTOPlay);
+			levelstoCompleteText.text = timeTOPlay.ToString();
+			DiceCheckZoneScript.result = timeTOPlay;
+
+
+			if (timeTOPlay == 0)
+			{
+				SceneManager.LoadScene("gameover");                
+			}
 		}
 	}
 
-    public void checkIsWon()
+    public void levelCompleted()
     {
-        if (result == 0)
-        {
-			SceneManager.LoadScene("gameover");
-        }
+		winPanel.SetActive(true);
+		rotator.enabled = false;
+		spawner.enabled = false;
+	}
+
+    public void RestartLevel ()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
     
-    public void loadAnotherLevel()
-    {
-		int index = Random.Range(1, 2);
+    public void loadAnotherLevel()  //level loader
+	{
+		int index = Random.Range(2, 10);
 		SceneManager.LoadScene(index);
 	}
 

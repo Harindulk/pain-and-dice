@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelEndTrigger : MonoBehaviour
 {
@@ -15,7 +16,11 @@ public class LevelEndTrigger : MonoBehaviour
 
     void Update()
     {
-        
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -25,5 +30,8 @@ public class LevelEndTrigger : MonoBehaviour
             levelstoComplete = result - low;
             Debug.Log(levelstoComplete);
         }
+
     }
+    
+    
 }

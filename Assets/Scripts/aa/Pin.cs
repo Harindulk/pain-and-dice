@@ -5,7 +5,6 @@ using UnityEngine;
 public class Pin : MonoBehaviour {
 
 	private bool isPinned = false;
-
 	public float speed = 20f;
 	public Rigidbody2D rb;
 
@@ -17,6 +16,7 @@ public class Pin : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col)
 	{
+        
 		if (col.tag == "Rotator")
 		{
 			transform.SetParent(col.transform);
@@ -25,6 +25,7 @@ public class Pin : MonoBehaviour {
 		} else if (col.tag == "Pin")
 		{
 			FindObjectOfType<aaManager>().EndGame();
+
 		}
 	}
 

@@ -10,9 +10,9 @@ public class GameController : MonoBehaviour
     public DiceScript diceScript;
     [SerializeField] private GameObject homePanel;
 
-    public void loadLevel()
+    public void loadLevel()  //level loader
     {
-        int index = Random.Range(1, 2);
+        int index = Random.Range(2, 10);
         SceneManager.LoadScene(index);
     }
 

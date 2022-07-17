@@ -1,10 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerSwitch : MonoBehaviour {
 
+	int timeTOPlay = DiceCheckZoneScript.result - 1;
+	[SerializeField] private TMP_Text levelsToCompleteText;
+	[SerializeField] private GameObject winPanel;
+	private bool restartGame = false;
+    
 	public float jumpForce = 10f;
-
 	public Rigidbody2D rb;
 	public SpriteRenderer sr;
 
@@ -30,14 +37,28 @@ public class PlayerSwitch : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col)
 	{
-		if (col.tag == "ColorChanger")
+		if (col.tag == "ColorChanger" && restartGame == false)
 		{
 			SetRandomColor();
 			Destroy(col.gameObject); 
 			return;
 		}
 
-		if (col.tag != currentColor)
+		if (col.tag == "won")
+		{
+			levelsToCompleteText.text = timeTOPlay.ToString();
+			winPanel.SetActive(true);
+			DiceCheckZoneScript.result = timeTOPlay;
+			restartGame = true;
+            
+			if (timeTOPlay == 0)
+			{
+				SceneManager.LoadScene("gameover");
+			}
+            
+		}
+
+		if (col.tag != currentColor && restartGame == false)
 		{
 			Debug.Log("GAME OVER!");
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -67,5 +88,11 @@ public class PlayerSwitch : MonoBehaviour {
 				sr.color = colorPink;
 				break;
 		}
+	}
+
+	public void loadAnotherLevel() //level loader
+	{
+		int index = Random.Range(2, 10);
+		SceneManager.LoadScene(index);
 	}
 }

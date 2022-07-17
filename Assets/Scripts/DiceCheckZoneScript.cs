@@ -12,7 +12,9 @@ public class DiceCheckZoneScript : MonoBehaviour {
     public bool scorePanelActive = false;
     static int firstNumber;
     static int secondNumber;
+
     public static int result;
+
     [SerializeField] private GameObject secondPanel;
     public GameObject havetoCompletePanel;
     [SerializeField] private TMP_Text havetoCompleteScore;
@@ -150,9 +152,11 @@ public class DiceCheckZoneScript : MonoBehaviour {
 
     IEnumerator scorPanele()
     {
+        secondPanel.SetActive(false);
         yield return new WaitForSeconds(0.5f);
         result = firstNumber + secondNumber;
         havetoCompleteScore.text = result.ToString();
         Cursor.visible = true;
+        DiceCheckZoneScript.keyPressed = 0;
     }
 }
